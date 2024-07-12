@@ -21,4 +21,8 @@ mongoose
   })
   .catch((error) => console.log(error));
 
+app.get("/", (req, res) => {
+  res.send("Transport API Running");
+});
+
 app.use("/api", tireRoute);
