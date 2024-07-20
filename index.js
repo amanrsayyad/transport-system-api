@@ -4,6 +4,7 @@ import bodyParser from "body-parser";
 import dotenv from "dotenv";
 import cors from "cors";
 import tireRoute from "./routes/tireRoutes.js";
+import truckRoute from "./routes/truckRoutes.js";
 
 const app = express();
 app.use(bodyParser.json());
@@ -28,3 +29,4 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api", tireRoute);
+app.use("/truck", truckRoute);

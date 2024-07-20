@@ -64,11 +64,11 @@ export const getTire = async (req, res) => {
 export const getTireById = async (req, res) => {
   try {
     const id = req.params.id;
-    const tireIdExist = await tireModel.findById(id);
-    if (!tireIdExist) {
-      return res.status(404).json({ message: "Tire id not found" });
+    const tireExist = await tireModel.findById(id);
+    if (!tireExist) {
+      return res.status(404).json({ message: "Tire not found." });
     }
-    res.status(200).json({ tireIdExist });
+    res.status(200).json({ tireExist });
   } catch (error) {
     res.status(500).json({ errorMessage: error.message });
   }
@@ -105,11 +105,11 @@ export const deleteTire = async (req, res) => {
     if (!delettire) {
       return res
         .status(404)
-        .json({ success: false, message: "user Not found" });
+        .json({ success: false, message: "Record Not found" });
     }
     res
       .status(200)
-      .json({ success: true, message: "user Deleted successfully" });
+      .json({ success: true, message: "Deleted Record Successfully" });
   } catch (error) {
     console.log(error);
     res.status(500).json({ success: false, message: "Internal server error" });

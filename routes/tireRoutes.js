@@ -13,7 +13,7 @@ tireRoute.post("/create-tire-maintenance", createTire);
 
 tireRoute.get("/get-tire-maintenance", getTire);
 
-tireRoute.get("/get-tire-id/:tireId", getTireById);
+tireRoute.get("/get-tire-id/:id", getTireById);
 
 tireRoute.put("/update-tire/user/:id", updateTire);
 
