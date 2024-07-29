@@ -41,7 +41,7 @@ export const getTruckById = async (req, res) => {
     const id = req.params.id;
     const truckExist = await truckModel.findById(id);
     if (!truckExist) {
-      return res.status(404).json({ message: "Tire not found." });
+      return res.status(404).json({ message: "Truck not found." });
     }
     res.status(200).json({ truckExist });
   } catch (error) {
